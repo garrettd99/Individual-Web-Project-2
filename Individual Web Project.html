@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Individual Web Project</title>
+    <style>
+        /* Global styles for the entire website */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        /* Navigation styles */
+        nav {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        nav ul li {
+            display: inline;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 20px;
+        }
+
+        nav ul li a:hover {
+            background-color: #555;
+        }
+
+        /* Container styles */
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+
+        /* Heading styles */
+        h1 {
+            color: #225969;
+        }
+
+        /* Paragraph styles */
+        p {
+            color: #000000;
+        }
+
+        /* Specific page styles */
+        #about,
+        #contact {
+            display: none;
+        }
+
+        /* Image styles */
+        #home-img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* About image styles */
+        #about-img {
+            width: 200px;
+            float: left; /* Float the image to the left of text */
+            margin-right: 20px; /* Add margin to the right for spacing */
+        }
+
+        /* Styles for h1 on About and Contact pages */
+        #about h1,
+        #contact h1 {
+            color: #1c704d;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <!-- Navigation links with onclick event to switch between pages -->
+            <li><a href="#" onclick="showPage('home')">Home</a></li>
+            <li><a href="#" onclick="showPage('about')">About</a></li>
+            <li><a href="#" onclick="showPage('contact')">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Page Content -->
+    <div id="home">
+        <!-- Home page content -->
+        <h1>Welcome to My Portfolio</h1>
+        <p>The about page contains most of the information on this website. I was going to include a picture of the KSU campus that I took, but I couldn't find one on my phone.</p>
+        <p> So instead here is a photo of the Ketchikan sign I took on my honeymoon cruise to Alaska.</p>
+        <img id="home-img" src="Ketchikan.jpg" alt="Your Photo">
+    </div>
+
+    <div id="about" style="display: none;">
+        <!-- About page content -->
+        <h1>About Me</h1>
+        <img id="about-img" src="11875.jpeg" alt="Your Photo">
+        <p>I am Garrett Davis, a passionate college student/process engineer with three and a half years of experience in engineering. Throughout my career, I have worked for one main company, Unique Fabricating. That was until last November when they filed for bankruptcy and everyone who worked there lost their jobs. I worked an hourly job for around a month and then the company that purchased the Unique assets brought me back in to help launch and start the location again.</p>
+        <p>In addition to my professional endeavors, I also enjoy spending time with my wife, reading, watching movies, and playing video games. We also have started enjoying going to top golf and trivia nights with friends. I have mainly been reading fantasy books for most of my life and the main games I play are League of Legends, Rocket League and some other random games with friends. I would say my favorite game series of all time is the Dark Souls series though.</p>
+        <p>My journey through KSU has been any interesting one. I started majoring in computer engineering, and did that until I started an internship. After around a year of being in the internship, the person I was interning under got a promotion and they offered me his position. I took the job and took a year off from KSU to focus fully on my job, but when I started trying to attend again I realized that the computer engineering major couldn't be completed fully online. So, I changed to computer science as I still wanted to get a degree and the concentration in data analysis will still be useful for my job.</p>
+    </div>
+
+    <div id="contact" style="display: none;">
+        <!-- Contact page content -->
+        <h1>Contact Me</h1>
+        <p>Use the form below to get in touch:</p>
+        <form action="connect.php" method="post">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required><br><br>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required><br><br>
+            <label for="message">Message:</label><br>
+            <textarea id="message" name="message" rows="4" cols="50" required></textarea><br><br>
+            <input type="submit" class ="btn btn-primary">
+        </form>
+    </div>
+
+    <!-- JavaScript function to switch between pages -->
+    <script>
+        function showPage(pageName) {
+            var pages = ['home', 'about', 'contact'];
+            for (var i = 0; i < pages.length; i++) {
+                var page = document.getElementById(pages[i]);
+                if (pages[i] === pageName) {
+                    page.style.display = 'block'; /* Show selected page */
+                } else {
+                    page.style.display = 'none'; /* Hide other pages */
+                }
+            }
+        }
+    </script>
+
+</body>
+
+</html>
